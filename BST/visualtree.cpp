@@ -29,31 +29,20 @@ void VisualTree::on_insert_button_clicked()
     QString raw_data = ui->Input_text->text();
     ui->Input_text->setText("");
 
-    if(raw_data.contains(",")){
-        _node->ResetLastLabel();
-        QStringList split_data = raw_data.split(",");
-
-        for(const auto &a : split_data){
-            Tree::Data _data;
-            _data.val = a.toInt();
-            _node->Insert(_data);
-
-        }
-    }
-    else{
-        Tree::Data _data;
-        _data.val = raw_data.toInt();
-        if(!(_node->Contain(raw_data.toInt()))){
-            _node->ResetLastLabel();
-            _node->Insert(_data);
+    Tree::Data _data;
+            _data.val = raw_data.toInt();
+            if(!(_node->Contain(raw_data.toInt()))){
+                _node->ResetLastLabel();
+                _node->Insert(_data);
 
 
-        }
-    }
+            }
 
     DrawTree = true;
     update();
 }
+
+
 
 void VisualTree::on_Root_set_clicked()
 {

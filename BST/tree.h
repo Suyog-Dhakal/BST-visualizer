@@ -16,18 +16,15 @@ namespace Tree {
     {
     public:
         const int DrawingSize{34};  //circle radius
-        const QPoint start_pos{360,150};  //initial position of root node
+        const QPoint start_pos{360,80};  //initial position of root node
 
         static int left_nodes;
         static int right_nodes;
         Data _data;
 
         bool Contain(int number);
-        int GetSmallestNumber();
-        int GetLargestNumber();
         void GetSortedVector(std::vector<int>& a);
         void Insert(Data NewData);
-        bool IsSymetrical();
         void ResetLastLabel();
 
         std::vector<Data> SetPositionOfNodesForVisualization();
@@ -44,6 +41,5 @@ namespace Tree {
         void SetDataForDrawing(Node& root);
         void SetPos(int& pos);
         void SetLevel(int& level);
-        void SymetricalChecking(std::vector<int>& vec);
     };
 }

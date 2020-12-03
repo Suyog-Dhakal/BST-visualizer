@@ -14,52 +14,6 @@ namespace Tree {
         delete _right;
     }
 
-    bool Node::IsSymetrical() {
-        std::vector <int> left_side;
-        std::vector <int> right_side;
-        _left->SymetricalChecking(left_side);
-        _right->SymetricalChecking(right_side);
-
-        if (left_side.size() != right_side.size())
-        {
-            return false;
-        }
-
-        for (size_t i = 0; i < left_side.size(); i++)
-        {
-            if (left_side[i] != right_side[i])
-            {
-                return false;
-            }
-        }
-
-        return true;
-
-    }
-
-    void Node::SymetricalChecking(std::vector<int>& vec) {
-        if (_left != nullptr && _right != nullptr)
-        {
-            vec.push_back(0);
-            _left->SymetricalChecking(vec);
-            _right->SymetricalChecking(vec);
-        }
-        else if (_left != nullptr)
-        {
-            vec.push_back(-1);
-            _left->SymetricalChecking(vec);
-        }
-        else if (_right != nullptr)
-        {
-            vec.push_back(1);
-            _right->SymetricalChecking(vec);
-        }
-        else
-        {
-            vec.push_back(2);
-        }
-    }
-
     void Node::Insert(Data NewData) {
         if (NewData.val < _data.val)
         {
@@ -118,24 +72,6 @@ namespace Tree {
         }
         else {
             return true;
-        }
-    }
-
-    int Node::GetSmallestNumber() {
-        if (_left == nullptr){
-            return _data.val;
-        }
-        else{
-            _left->GetSmallestNumber();
-        }
-    }
-
-    int Node::GetLargestNumber() {
-        if (_right == nullptr) {
-            return _data.val;
-        }
-        else {
-            _right->GetLargestNumber();
         }
     }
 

@@ -23,7 +23,10 @@ private slots:
 
     void on_Root_set_clicked();
 
-    //void on_pushButton_clicked();
+   // void on_delete_button_clicked();
+
+    //void on_Exit_button_clicked();
+
 
 private:
     bool DrawTree{false};
