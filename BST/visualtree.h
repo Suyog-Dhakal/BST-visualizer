@@ -25,7 +25,6 @@ private slots:
 
    // void on_delete_button_clicked();
 
-    //void on_Exit_button_clicked();
 
 
 private:

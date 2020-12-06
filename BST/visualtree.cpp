@@ -28,7 +28,6 @@ void VisualTree::on_insert_button_clicked()
 {
     QString raw_data = ui->Input_text->text();
     ui->Input_text->setText("");
-
     Tree::Data _data;
             _data.val = raw_data.toInt();
             if(!(_node->Contain(raw_data.toInt()))){
@@ -56,6 +55,7 @@ void VisualTree::on_Root_set_clicked()
     ui->Root_inp->setEnabled(false);
     ui->Root_set->setEnabled(false);
 }
+
 
 void VisualTree::paintEvent(QPaintEvent *event){
     if(DrawTree == true){
