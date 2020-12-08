@@ -25,9 +25,8 @@ namespace Tree {
         void SetLevel(int& level);
 
     public:
-        const int DrawingSize{34};  //circle radius
-        const QPoint start_pos{360,80};  //initial position of root node
-
+        const int DrawingSize{34};   //circle diameter(size)
+        const QPoint start_pos{360,80};   //paint_node starts working from this point
         static int left_nodes;
         static int right_nodes;
         Data _data;
@@ -36,8 +35,8 @@ namespace Tree {
         bool Contain(int number);
         void GetSortedVector(std::vector<int>& a);
         void Insert(Data NewData);
-        bool deleteItem(Data data);
-        void ResetLastLabel();
+        void deleteItem(Data data);
+        void ResetLastLabel(); //for coloring the recently inserted node
 
         std::vector<Data> SetPositionOfNodesForVisualization();
         std::vector<QPoint> GetVectorOfLinesBetwenNodes();
